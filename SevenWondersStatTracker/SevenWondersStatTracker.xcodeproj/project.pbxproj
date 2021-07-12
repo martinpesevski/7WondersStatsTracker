@@ -1,0 +1,416 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C7ABC58B2691015400BC72A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ABC58A2691015400BC72A9 /* AppDelegate.swift */; };
+		C7ABC58D2691015400BC72A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ABC58C2691015400BC72A9 /* SceneDelegate.swift */; };
+		C7ABC58F2691015400BC72A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ABC58E2691015400BC72A9 /* ViewController.swift */; };
+		C7ABC5922691015400BC72A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7ABC5902691015400BC72A9 /* Main.storyboard */; };
+		C7ABC5942691015500BC72A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7ABC5932691015500BC72A9 /* Assets.xcassets */; };
+		C7ABC5972691015500BC72A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7ABC5952691015500BC72A9 /* LaunchScreen.storyboard */; };
+		D8B1422D4D8CEC5B2219C977 /* Pods_SevenWondersStatTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9771C4E32358A18F0A7201E /* Pods_SevenWondersStatTracker.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C7ABC5872691015400BC72A9 /* SevenWondersStatTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SevenWondersStatTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7ABC58A2691015400BC72A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C7ABC58C2691015400BC72A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C7ABC58E2691015400BC72A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C7ABC5912691015400BC72A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C7ABC5932691015500BC72A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C7ABC5962691015500BC72A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C7ABC5982691015500BC72A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9771C4E32358A18F0A7201E /* Pods_SevenWondersStatTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SevenWondersStatTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA9203FC3236EEE62F9F7364 /* Pods-SevenWondersStatTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SevenWondersStatTracker.debug.xcconfig"; path = "Target Support Files/Pods-SevenWondersStatTracker/Pods-SevenWondersStatTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		F9F5397C1724EED33A8C15B2 /* Pods-SevenWondersStatTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SevenWondersStatTracker.release.xcconfig"; path = "Target Support Files/Pods-SevenWondersStatTracker/Pods-SevenWondersStatTracker.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C7ABC5842691015400BC72A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8B1422D4D8CEC5B2219C977 /* Pods_SevenWondersStatTracker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B534018653CA3D00D8C8A440 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9771C4E32358A18F0A7201E /* Pods_SevenWondersStatTracker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C7ABC57E2691015400BC72A9 = {
+			isa = PBXGroup;
+			children = (
+				C7ABC5892691015400BC72A9 /* SevenWondersStatTracker */,
+				C7ABC5882691015400BC72A9 /* Products */,
+				D15978E601ED4F35DA7E5164 /* Pods */,
+				B534018653CA3D00D8C8A440 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C7ABC5882691015400BC72A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7ABC5872691015400BC72A9 /* SevenWondersStatTracker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C7ABC5892691015400BC72A9 /* SevenWondersStatTracker */ = {
+			isa = PBXGroup;
+			children = (
+				C7ABC58A2691015400BC72A9 /* AppDelegate.swift */,
+				C7ABC58C2691015400BC72A9 /* SceneDelegate.swift */,
+				C7ABC58E2691015400BC72A9 /* ViewController.swift */,
+				C7ABC5902691015400BC72A9 /* Main.storyboard */,
+				C7ABC5932691015500BC72A9 /* Assets.xcassets */,
+				C7ABC5952691015500BC72A9 /* LaunchScreen.storyboard */,
+				C7ABC5982691015500BC72A9 /* Info.plist */,
+			);
+			path = SevenWondersStatTracker;
+			sourceTree = "<group>";
+		};
+		D15978E601ED4F35DA7E5164 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EA9203FC3236EEE62F9F7364 /* Pods-SevenWondersStatTracker.debug.xcconfig */,
+				F9F5397C1724EED33A8C15B2 /* Pods-SevenWondersStatTracker.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C7ABC5862691015400BC72A9 /* SevenWondersStatTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7ABC59B2691015500BC72A9 /* Build configuration list for PBXNativeTarget "SevenWondersStatTracker" */;
+			buildPhases = (
+				73E53587FDD88EB582DC4CE2 /* [CP] Check Pods Manifest.lock */,
+				C7ABC5832691015400BC72A9 /* Sources */,
+				C7ABC5842691015400BC72A9 /* Frameworks */,
+				C7ABC5852691015400BC72A9 /* Resources */,
+				6605B01C42B8B2B0383B1AF6 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SevenWondersStatTracker;
+			productName = SevenWondersStatTracker;
+			productReference = C7ABC5872691015400BC72A9 /* SevenWondersStatTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C7ABC57F2691015400BC72A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					C7ABC5862691015400BC72A9 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = C7ABC5822691015400BC72A9 /* Build configuration list for PBXProject "SevenWondersStatTracker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C7ABC57E2691015400BC72A9;
+			productRefGroup = C7ABC5882691015400BC72A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C7ABC5862691015400BC72A9 /* SevenWondersStatTracker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C7ABC5852691015400BC72A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7ABC5972691015500BC72A9 /* LaunchScreen.storyboard in Resources */,
+				C7ABC5942691015500BC72A9 /* Assets.xcassets in Resources */,
+				C7ABC5922691015400BC72A9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6605B01C42B8B2B0383B1AF6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SevenWondersStatTracker/Pods-SevenWondersStatTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SevenWondersStatTracker/Pods-SevenWondersStatTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SevenWondersStatTracker/Pods-SevenWondersStatTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73E53587FDD88EB582DC4CE2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SevenWondersStatTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C7ABC5832691015400BC72A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7ABC58F2691015400BC72A9 /* ViewController.swift in Sources */,
+				C7ABC58B2691015400BC72A9 /* AppDelegate.swift in Sources */,
+				C7ABC58D2691015400BC72A9 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C7ABC5902691015400BC72A9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7ABC5912691015400BC72A9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C7ABC5952691015500BC72A9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7ABC5962691015500BC72A9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C7ABC5992691015500BC72A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C7ABC59A2691015500BC72A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C7ABC59C2691015500BC72A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA9203FC3236EEE62F9F7364 /* Pods-SevenWondersStatTracker.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 73B4229N3R;
+				INFOPLIST_FILE = SevenWondersStatTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MP.SevenWondersStatTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C7ABC59D2691015500BC72A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9F5397C1724EED33A8C15B2 /* Pods-SevenWondersStatTracker.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 73B4229N3R;
+				INFOPLIST_FILE = SevenWondersStatTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MP.SevenWondersStatTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C7ABC5822691015400BC72A9 /* Build configuration list for PBXProject "SevenWondersStatTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7ABC5992691015500BC72A9 /* Debug */,
+				C7ABC59A2691015500BC72A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7ABC59B2691015500BC72A9 /* Build configuration list for PBXNativeTarget "SevenWondersStatTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7ABC59C2691015500BC72A9 /* Debug */,
+				C7ABC59D2691015500BC72A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C7ABC57F2691015400BC72A9 /* Project object */;
+}
