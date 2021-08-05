@@ -13,6 +13,10 @@
 		C7ABC5922691015400BC72A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7ABC5902691015400BC72A9 /* Main.storyboard */; };
 		C7ABC5942691015500BC72A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7ABC5932691015500BC72A9 /* Assets.xcassets */; };
 		C7ABC5972691015500BC72A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7ABC5952691015500BC72A9 /* LaunchScreen.storyboard */; };
+		C7ABC59F269DCD1700BC72A9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7ABC59E269DCD1700BC72A9 /* GoogleService-Info.plist */; };
+		C7ABC5A1269DD9BC00BC72A9 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ABC5A0269DD9BC00BC72A9 /* DatabaseManager.swift */; };
+		C7ABC5A3269E1BA700BC72A9 /* UserSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ABC5A2269E1BA700BC72A9 /* UserSelectionViewController.swift */; };
+		C7ABC5A5269E245F00BC72A9 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ABC5A4269E245F00BC72A9 /* AddUserViewController.swift */; };
 		D8B1422D4D8CEC5B2219C977 /* Pods_SevenWondersStatTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9771C4E32358A18F0A7201E /* Pods_SevenWondersStatTracker.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +29,10 @@
 		C7ABC5932691015500BC72A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7ABC5962691015500BC72A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7ABC5982691015500BC72A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7ABC59E269DCD1700BC72A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C7ABC5A0269DD9BC00BC72A9 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		C7ABC5A2269E1BA700BC72A9 /* UserSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSelectionViewController.swift; sourceTree = "<group>"; };
+		C7ABC5A4269E245F00BC72A9 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
 		D9771C4E32358A18F0A7201E /* Pods_SevenWondersStatTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SevenWondersStatTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA9203FC3236EEE62F9F7364 /* Pods-SevenWondersStatTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SevenWondersStatTracker.debug.xcconfig"; path = "Target Support Files/Pods-SevenWondersStatTracker/Pods-SevenWondersStatTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		F9F5397C1724EED33A8C15B2 /* Pods-SevenWondersStatTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SevenWondersStatTracker.release.xcconfig"; path = "Target Support Files/Pods-SevenWondersStatTracker/Pods-SevenWondersStatTracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -74,10 +82,14 @@
 				C7ABC58A2691015400BC72A9 /* AppDelegate.swift */,
 				C7ABC58C2691015400BC72A9 /* SceneDelegate.swift */,
 				C7ABC58E2691015400BC72A9 /* ViewController.swift */,
+				C7ABC5A2269E1BA700BC72A9 /* UserSelectionViewController.swift */,
+				C7ABC5A4269E245F00BC72A9 /* AddUserViewController.swift */,
+				C7ABC5A0269DD9BC00BC72A9 /* DatabaseManager.swift */,
 				C7ABC5902691015400BC72A9 /* Main.storyboard */,
 				C7ABC5932691015500BC72A9 /* Assets.xcassets */,
 				C7ABC5952691015500BC72A9 /* LaunchScreen.storyboard */,
 				C7ABC5982691015500BC72A9 /* Info.plist */,
+				C7ABC59E269DCD1700BC72A9 /* GoogleService-Info.plist */,
 			);
 			path = SevenWondersStatTracker;
 			sourceTree = "<group>";
@@ -151,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7ABC5972691015500BC72A9 /* LaunchScreen.storyboard in Resources */,
+				C7ABC59F269DCD1700BC72A9 /* GoogleService-Info.plist in Resources */,
 				C7ABC5942691015500BC72A9 /* Assets.xcassets in Resources */,
 				C7ABC5922691015400BC72A9 /* Main.storyboard in Resources */,
 			);
@@ -205,8 +218,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7ABC5A3269E1BA700BC72A9 /* UserSelectionViewController.swift in Sources */,
+				C7ABC5A5269E245F00BC72A9 /* AddUserViewController.swift in Sources */,
 				C7ABC58F2691015400BC72A9 /* ViewController.swift in Sources */,
 				C7ABC58B2691015400BC72A9 /* AppDelegate.swift in Sources */,
+				C7ABC5A1269DD9BC00BC72A9 /* DatabaseManager.swift in Sources */,
 				C7ABC58D2691015400BC72A9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

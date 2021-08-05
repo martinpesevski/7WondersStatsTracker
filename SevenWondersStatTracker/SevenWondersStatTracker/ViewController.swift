@@ -161,6 +161,9 @@ class ViewController: UIViewController {
         }
         return f
     }()
+    
+    let databaseManager = DatabaseManager()
+    
     var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumInteritemSpacing = 2
@@ -212,20 +215,30 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func showNameDialog(indexPath: IndexPath) {
         
-        let alert = UIAlertController(title: fields[indexPath.row].type.alertText, message: nil, preferredStyle: .alert)
-        alert.addTextField { [weak self] field in
+//        let alert = UIAlertController(title: fields[indexPath.row].type.alertText, message: nil, preferredStyle: .alert)
+//        alert.addTextField { [weak self] field in
+//            guard let self = self else { return }
+//
+//
+//            field.delegate = self
+//            field.keyboardType = self.fields[indexPath.row].type.keyboardStyle
+//            field.tag = indexPath.item
+//        }
+//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+//            alert.textFields?[0].endEditing(false)
+//        }))
+//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//        present(alert, animated: true, completion: nil)
+        
+        databaseManager.loadUsers { [weak self] users in
             guard let self = self else { return }
             
-            
-            field.delegate = self
-            field.keyboardType = self.fields[indexPath.row].type.keyboardStyle
-            field.tag = indexPath.item
+            DispatchQueue.main.async {
+                let userSelection = UserSelectionViewController(dataManager: self.databaseManager)
+                self.present(userSelection, animated: true, completion: nil)
+            }
         }
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-            alert.textFields?[0].endEditing(false)
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        present(alert, animated: true, completion: nil)
+        
     }
     
     func calculateTotal(_ forColumn: Int) {
@@ -253,7 +266,14 @@ extension ViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         switch fields[textField.tag].type {
         case .image: return
-        case .name: fields[textField.tag].type = .name(text: textField.text ?? "")
+        case .name:
+            databaseManager.loadUsers { [weak self] users in
+                guard let self = self else { return }
+                if users.filter({ user in user.name == textField.text }).isEmpty {
+                    if let text = textField.text { self.databaseManager.addUser(User(name: text)) }
+                }
+            }
+            fields[textField.tag].type = .name(text: textField.text ?? "")
         case .score:
             fields[textField.tag].type = .score(text: textField.text ?? "")
             fields[textField.tag].score = Int(textField.text ?? "0")

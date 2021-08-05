@@ -8,5 +8,6 @@ target 'SevenWondersStatTracker' do
   # Pods for SevenWondersStatTracker
 
 pod 'SnapKit'
+pod 'Firebase/Database'
 
 end
