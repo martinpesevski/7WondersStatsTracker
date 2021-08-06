@@ -106,7 +106,7 @@ class CustomCell: UICollectionViewCell{
         layer.cornerRadius = 5
         addSubview(imageView)
         imageView.snp.makeConstraints { make in make.edges.equalToSuperview() }
-
+        
         addSubview(textLabel)
         textLabel.snp.makeConstraints { make in make.edges.equalToSuperview() }
     }
@@ -117,13 +117,13 @@ class CustomCell: UICollectionViewCell{
         case .image(image: let scoreType):
             textLabel.isHidden = true
             imageView.isHidden = false
-                imageView.backgroundColor = scoreType.backgroundColor
-                if let image = scoreType.image {
-                    imageView.image = image
-                    imageView.tintColor = .label
-                } else {
-                    imageView.tintColor = .clear
-                }
+            imageView.backgroundColor = scoreType.backgroundColor
+            if let image = scoreType.image {
+                imageView.image = image
+                imageView.tintColor = .label
+            } else {
+                imageView.tintColor = .clear
+            }
             backgroundColor = .red.withAlphaComponent(0.2)
         case .name(text: let text):
             setupTextLabel(text: text)
@@ -180,7 +180,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = .systemBackground
         collectionView.dataSource = self
         collectionView.delegate  = self
@@ -208,37 +208,27 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         switch fields[indexPath.item].type {
         case .image: return
         case .name: showNameDialog(indexPath: indexPath)
-        case .score: showNameDialog(indexPath: indexPath)
+        case .score: showScoreDialog(indexPath: indexPath)
         case .total: return
         }
     }
     
     func showNameDialog(indexPath: IndexPath) {
-        
-//        let alert = UIAlertController(title: fields[indexPath.row].type.alertText, message: nil, preferredStyle: .alert)
-//        alert.addTextField { [weak self] field in
-//            guard let self = self else { return }
-//
-//
-//            field.delegate = self
-//            field.keyboardType = self.fields[indexPath.row].type.keyboardStyle
-//            field.tag = indexPath.item
-//        }
-//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-//            alert.textFields?[0].endEditing(false)
-//        }))
-//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//        present(alert, animated: true, completion: nil)
-        
         databaseManager.loadUsers { [weak self] users in
             guard let self = self else { return }
             
             DispatchQueue.main.async {
                 let userSelection = UserSelectionViewController(dataManager: self.databaseManager)
+                userSelection.delegate = self
                 self.present(userSelection, animated: true, completion: nil)
             }
         }
-        
+    }
+    
+    func showScoreDialog(indexPath: IndexPath) {
+        let scoreSelection = AddScoreViewController(indexPath: indexPath)
+        scoreSelection.delegate = self
+        present(scoreSelection, animated: true, completion: nil)
     }
     
     func calculateTotal(_ forColumn: Int) {
@@ -281,5 +271,30 @@ extension ViewController: UITextFieldDelegate {
         case .total: return
         }
         collectionView.reloadData()
+    }
+}
+
+extension ViewController: UserSelectionDelegate {
+    func didSelectUsers(_ users: [User]) {
+        var counter = 0
+        for i in 0..<fields.count where users.count > counter {
+            switch fields[i].type {
+            case .name:
+                fields[i].type = .name(text: users[counter].name)
+                counter += 1
+            default: break
+            }
+        }
+        databaseManager.selectedUsers = users
+        collectionView.reloadData()
+    }
+}
+
+extension ViewController: AddScoreViewControllerDelegate {
+    func didAdd(score: Int, indexPath: IndexPath) {
+        fields[indexPath.item].type = .score(text: "\(score)")
+        fields[indexPath.item].score = score
+
+        calculateTotal(fields[indexPath.item].column)
     }
 }

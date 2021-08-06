@@ -1,24 +1,24 @@
 //
-//  AddUserViewController.swift
+//  AddScoreViewController.swift
 //  SevenWondersStatTracker
 //
-//  Created by Martin Peshevski on 13.7.21.
+//  Created by Martin Peshevski on 5.8.21.
 //
 
 import UIKit
 import SnapKit
 
-protocol AddUserViewControllerDelegate {
-    func didAdd(user: User)
+protocol AddScoreViewControllerDelegate {
+    func didAdd(score: Int, indexPath: IndexPath)
 }
 
-class AddUserViewController: UIViewController {
-    var delegate: AddUserViewControllerDelegate?
+class AddScoreViewController: UIViewController {
+    var delegate: AddScoreViewControllerDelegate?
     
     lazy var titleLabel: UILabel = {
         let l = UILabel()
         l.textColor = .label
-        l.text = "Type a name for your new user"
+        l.text = "Enter your score"
         l.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
         
         return l
@@ -26,7 +26,8 @@ class AddUserViewController: UIViewController {
     
     lazy var textField: UITextField = {
         let t = UITextField()
-        t.placeholder = "Enter name"
+        t.placeholder = "Enter score"
+        t.keyboardType = .numberPad
         t.becomeFirstResponder()
         return t
     }()
@@ -60,17 +61,18 @@ class AddUserViewController: UIViewController {
         b.backgroundColor = .systemGray5
         b.layer.cornerRadius = 20
         b.addAction(UIAction(handler: { [weak self] _ in
-            guard let text = self?.textField.text, !text.isEmpty else {
-                let alert = UIAlertController(title: "Name cannot be empty", message: nil, preferredStyle: .alert)
+            guard let self = self else { return }
+            guard let text = self.textField.text, !text.isEmpty, let score = Int(text) else {
+                let alert = UIAlertController(title: "Please enter a valid score", message: nil, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
                     alert.dismiss(animated: false, completion: nil)
                 }))
-                self?.present(alert, animated: true, completion: nil)
+                self.present(alert, animated: true, completion: nil)
                 
                 return
             }
-            self?.delegate?.didAdd(user: User(name: text))
-            self?.dismiss(animated: true, completion: nil)
+            self.delegate?.didAdd(score: score, indexPath: self.indexPath)
+            self.dismiss(animated: true, completion: nil)
         }), for: .touchUpInside)
         
         return b
@@ -84,6 +86,13 @@ class AddUserViewController: UIViewController {
         return l
     }()
     
+    let indexPath: IndexPath
+    
+    init(indexPath: IndexPath) {
+        self.indexPath = indexPath
+        super.init(nibName: nil, bundle: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -92,5 +101,9 @@ class AddUserViewController: UIViewController {
         view.addSubview(content)
         view.backgroundColor = .systemBackground
         content.snp.makeConstraints { make in make.edges.equalTo(view.layoutMarginsGuide).inset(20) }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

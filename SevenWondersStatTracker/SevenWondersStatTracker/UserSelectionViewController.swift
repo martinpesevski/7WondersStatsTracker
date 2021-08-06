@@ -97,6 +97,10 @@ class UserSelectionViewController: UIViewController {
         contentStack.addArrangedSubview(butonStack)
         view.addSubview(contentStack)
         
+        for (index, user) in dataManager.users.enumerated() where dataManager.selectedUsers.contains(user) {
+            tableView.selectRow(at: IndexPath(row: index, section: 0), animated: false, scrollPosition: .none)
+        }
+        
         contentStack.snp.makeConstraints { make in make.edges.equalTo(view.layoutMarginsGuide).inset(20) }
     }
     
@@ -107,7 +111,13 @@ class UserSelectionViewController: UIViewController {
     }
     
     func onDone() {
-        delegate?.didSelectUsers([])
+        if let rows = tableView.indexPathsForSelectedRows {
+            var selected: [User] = []
+            for row in rows {
+                selected.append(dataManager.users[row.row])
+            }
+            delegate?.didSelectUsers(selected)
+        }
         dismiss(animated: true, completion: nil)
     }
 }
@@ -124,5 +134,12 @@ extension UserSelectionViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataManager.users.count
+    }
+}
+
+extension UserSelectionViewController: AddUserViewControllerDelegate {
+    func didAdd(user: User) {
+        dataManager.addUser(user)
+        tableView.reloadData()
     }
 }

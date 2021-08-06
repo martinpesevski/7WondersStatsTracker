@@ -8,14 +8,15 @@
 import Foundation
 import Firebase
 
-struct User {
+struct User: Equatable {
     var name: String
 }
 
 class DatabaseManager {
     var ref: DatabaseReference
     var users: [User] = []
-    
+    var selectedUsers: [User] = []
+
     init() {
         ref = Database.database().reference()
     }
