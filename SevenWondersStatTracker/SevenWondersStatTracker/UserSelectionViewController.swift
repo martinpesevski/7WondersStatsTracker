@@ -8,6 +8,25 @@
 import UIKit
 import SnapKit
 
+class UserSelectionCell: UITableViewCell {
+    lazy var nameLabel: UILabel = {
+        let l = UILabel()
+        l.textColor = .label
+        
+        return l
+    }()
+    
+//    lazy var counterLabel
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 protocol UserSelectionDelegate: AnyObject {
     func didSelectUsers(_ users: [User])
 }

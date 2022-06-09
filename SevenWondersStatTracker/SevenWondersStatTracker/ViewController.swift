@@ -86,12 +86,12 @@ enum ScoreType: Int {
 
 class CustomCell: UICollectionViewCell{
     var celltype: CellType = .name(text: "")
-    var imageView: UIImageView = {
+    lazy var imageView: UIImageView = {
         let img = UIImageView()
         img.contentMode = .scaleAspectFit
         return img
     }()
-    var textLabel: UILabel = {
+    lazy var textLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .label
@@ -148,8 +148,11 @@ class CustomCell: UICollectionViewCell{
     }
 }
 
+let paddingSide: CGFloat = 10
+let paddingVertical: CGFloat = 10
+
 class ViewController: UIViewController {
-    var fields: [CellModel] = {
+    lazy var fields: [CellModel] = {
         var f: [CellModel] = []
         for i in 0..<72 {
             var model = CellModel(type: .score(text: ""), row: ScoreType.scoreType(index: i), column: i % 8, score: nil)
@@ -164,16 +167,26 @@ class ViewController: UIViewController {
     
     let databaseManager = DatabaseManager()
     
-    var collectionView: UICollectionView = {
+    lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumInteritemSpacing = 2
         
         flowLayout.minimumLineSpacing = 2
-        flowLayout.itemSize = CGSize(width: (UIScreen.main.bounds.width / (8)) - 16, height: (UIScreen.main.bounds.height / (8)) - 16)
+        let window = UIApplication.shared.windows.first
+        let leftInset = window?.safeAreaInsets.left ?? 0
+        let rightInset = window?.safeAreaInsets.right ?? 0
+        let topInset = window?.safeAreaInsets.top ?? 0
+        let bottomInset = window?.safeAreaInsets.bottom ?? 0
+        let paddingLeftRight = leftInset + rightInset + 14 + (paddingSide * 2)
+        let paddingUpDown = topInset + bottomInset + 20 + 16 + paddingVertical
+
+        flowLayout.itemSize = CGSize(width: (UIScreen.main.bounds.width - paddingLeftRight - (flowLayout.minimumInteritemSpacing * 8)) / 8, height: (UIScreen.main.bounds.height - paddingUpDown) / 9)
         
         let col = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         col.backgroundColor = .systemBackground
         col.register(CustomCell.self, forCellWithReuseIdentifier: "customCell")
+        col.dataSource = self
+        col.delegate  = self
         
         return col
     }()
@@ -182,12 +195,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
-        collectionView.dataSource = self
-        collectionView.delegate  = self
         
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
-            make.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(paddingSide)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(paddingVertical)
             make.top.equalToSuperview().inset(20)
         }
     }

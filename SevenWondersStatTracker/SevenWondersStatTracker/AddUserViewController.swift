@@ -92,5 +92,19 @@ class AddUserViewController: UIViewController {
         view.addSubview(content)
         view.backgroundColor = .systemBackground
         content.snp.makeConstraints { make in make.edges.equalTo(view.layoutMarginsGuide).inset(20) }
+        NotificationCenter.default.addObserver(self,
+               selector: #selector(onKeyboardChange(notification:)),
+               name: UIResponder.keyboardWillChangeFrameNotification,
+               object: nil)
+    }
+    
+    @objc func onKeyboardChange(notification: Notification) {
+        guard let userInfo = notification.userInfo else { return }
+
+        let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        
+        content.snp.updateConstraints { make in
+            make.bottom.equalTo(view.layoutMarginsGuide).inset((endFrame?.size.height ?? 0.0) + 20)
+        }
     }
 }
